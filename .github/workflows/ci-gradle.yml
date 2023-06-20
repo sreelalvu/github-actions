@@ -9,7 +9,7 @@ name: Java CI with Gradle for Github action demo
 
 on:
   push:
-    branches: [ "github-action" ]
+    branches: [ "github-action-cicd1" ]
   #pull_request:
     #branches: [ "github-action" ]
 
