@@ -9,9 +9,9 @@ name: Java CI with Gradle for Github action demo
 
 on:
   push:
-    branches: [ "github-action" ]
-  pull_request:
-    branches: [ "github-action" ]
+    branches: [ "github-action-cicd1" ]
+  #pull_request:
+    #branches: [ "github-action" ]
 
 permissions:
   contents: read
@@ -31,3 +31,11 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+      
+    - name: Build and push docker image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: sreelalvu/images
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
