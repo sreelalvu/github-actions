@@ -10,8 +10,8 @@ name: Java CI with Gradle for Github action demo
 on:
   push:
     branches: [ "github-action" ]
-  pull_request:
-    branches: [ "github-action" ]
+  #pull_request:
+    #branches: [ "github-action" ]
 
 permissions:
   contents: read
